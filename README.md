@@ -88,5 +88,5 @@ gaming_gestures/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/hand-gesture-game-control.git
-cd hand-gesture-game-control
+git clone https://github.com/ndheeraj-shetty/Gaming-Gestures.git
+cd gaming_gestures
