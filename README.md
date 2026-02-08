@@ -89,4 +89,4 @@ gaming_gestures/
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ndheeraj-shetty/Gaming-Gestures.git
-cd gaming_gestures
+cd Gaming-Gestures
