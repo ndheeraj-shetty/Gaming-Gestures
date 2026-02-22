@@ -1,13 +1,13 @@
 import cv2
-import mediapipe as mp
+from mediapipe import solutions
 from gesture_logic import GestureLogic
 from camera import Camera
 from controller import Controller
 
-# Initialize MediaPipe Hands correctly
-mp_hands = mp.solutions.hands
-hand_tracker = mp_hands.Hands(max_num_hands=1)
-mp_draw = mp.solutions.drawing_utils
+# Initialize hands
+hands_module = solutions.hands
+hand_tracker = hands_module.Hands(max_num_hands=1)
+mp_draw = solutions.drawing_utils
 
 # Initialize webcam, gesture logic, controller
 camera = Camera()
@@ -25,7 +25,7 @@ while True:
 
     if result.multi_hand_landmarks:
         for hand in result.multi_hand_landmarks:
-            mp_draw.draw_landmarks(frame, hand, mp_hands.HAND_CONNECTIONS)
+            mp_draw.draw_landmarks(frame, hand, hands_module.HAND_CONNECTIONS)
 
             h, w, _ = frame.shape
             x = int(hand.landmark[8].x * w)
@@ -46,4 +46,3 @@ while True:
         break
 
 camera.release()
-cv2.destroyAllWindows()
